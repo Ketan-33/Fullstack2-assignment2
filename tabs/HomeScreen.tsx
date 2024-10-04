@@ -1,23 +1,24 @@
 import React from 'react';
 import { View, Text, ScrollView, Image, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'; // Assuming you are using Ionicons for the icons
+import Icon from 'react-native-vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
 
 export default function HomeScreen() {
+  const navigation = useNavigation();
   return (
     <ScrollView style={styles.container}>
       
       <View style={styles.topBar}>
-
         <Text style={styles.logo}>Sport Shoes</Text>
         <View style={styles.topBarIcons}>
-        <TouchableOpacity>
-          <Icon name="heart-outline" size={24} color="#000" />
-        </TouchableOpacity>
-          <TouchableOpacity style={styles.cartIcon}>
-            <Icon name="search-outline" size={24} color="#000" />
+          <TouchableOpacity style={styles.cartIcon} onPress={() => navigation.navigate('WishlistScreen' as never)}>
+            <Icon name="heart-outline" size={24} color="#000" />
           </TouchableOpacity>
           <TouchableOpacity style={styles.cartIcon}>
             <Icon name="cart-outline" size={24} color="#000" />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.cartIcon} onPress={() => navigation.navigate('NotificationScreen' as never)}>
+            <Icon name="notifications-outline" size={24} color="#000" />
           </TouchableOpacity>
         </View>
       </View>

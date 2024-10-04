@@ -55,10 +55,11 @@ export default function App() {
       >
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Transaction" component={TransactionScreen} />
-        <Tab.Screen name="Coupons" component={Coupons} />
-        <Tab.Screen name="Bills" component={Bills} />
+        <Tab.Screen name="Coupons" component={WishlistScreen} />
+        <Tab.Screen name="Bills" component={NotificationScreen} />
         <Tab.Screen name="Profile" component={Profile} />
       </Tab.Navigator>
+      
     </NavigationContainer>
   );
 }
