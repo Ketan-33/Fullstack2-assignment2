@@ -1,42 +1,41 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-
 const wishlistData = [
   {
     id: '1',
     title: 'Aero Sport Infinity Pro',
     category: 'Footwear',
     price: 'Rp400.000',
-    image: 'https://example.com/aero-sport-infinity-pro.jpg', // Replace with actual image URLs
+    image: require('../assets/pic1.png'),
   },
   {
     id: '2',
     title: 'Sport+ Invincible Pro',
     category: 'Footwear',
     price: 'Rp389.000',
-    image: 'https://example.com/sport-invincible-pro.jpg',
+    image: require('../assets/pic2.png'),
   },
   {
     id: '3',
     title: 'Sport Sneakers+ Blue',
     category: 'Footwear',
     price: 'Rp200.000',
-    image: 'https://example.com/sport-sneakers-blue.jpg',
+    image: require('../assets/pic3.png'),
   },
   {
     id: '4',
     title: 'Sport+ Invincible Max',
     category: 'Footwear',
     price: 'Rp399.000',
-    image: 'https://example.com/sport-invincible-max.jpg',
+    image: require('../assets/pic4.png'),
   },
 ];
 
 export default function WishlistScreen() {
   const renderItem = ({ item }) => (
     <TouchableOpacity style={styles.productCard}>
-      <Image source={{ uri: item.image }} style={styles.productImage} />
+      <Image source={item.image} style={styles.productImage} />
       <Text style={styles.productTitle}>{item.title}</Text>
       <Text style={styles.productCategory}>{item.category}</Text>
       <Text style={styles.productPrice}>{item.price}</Text>
